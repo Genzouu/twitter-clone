@@ -1,53 +1,67 @@
-import { BsPerson, BsTwitter } from "react-icons/bs";
+import { BsPerson, BsPersonFill, BsTwitter } from "react-icons/bs";
 import { BiDotsHorizontalRounded, BiHash } from "react-icons/bi";
-import { HiOutlineBell } from "react-icons/hi";
+import { AiFillHome, AiOutlineHome } from "react-icons/ai";
 import { IoEllipsisHorizontalCircle } from "react-icons/io5";
-import { FaRegEnvelope } from "react-icons/fa";
-import { MdOutlineBookmarkBorder, MdOutlineMessage } from "react-icons/md";
-import { RiHome7Line } from "react-icons/ri";
+import { FaEnvelope, FaRegEnvelope } from "react-icons/fa";
+import { MdMessage, MdOutlineBookmark, MdOutlineBookmarkBorder, MdOutlineMessage } from "react-icons/md";
+import { RiNotification2Fill, RiNotification2Line } from "react-icons/ri";
 
 import "./LeftPanel.scss";
+import { useState } from "react";
 
 export default function LeftPanel() {
+   const [selectedPage, setSelectedPage] = useState<
+      "home" | "topics" | "notifications" | "messages" | "bookmarks" | "lists" | "profile"
+   >("home");
+
    return (
       <div className="left-panel">
          <BsTwitter className="twitter-logo icon" />
-         <div className="home list-item">
-            <RiHome7Line className="icon" />
-            {/* <RiHome7Fill /> */}
+         <div className="list-item" onClick={() => setSelectedPage("home")}>
+            {selectedPage === "home" ? <AiFillHome className="icon" /> : <AiOutlineHome className="icon" />}
             <p className="text">Home</p>
          </div>
-         <div className="find-topics list-item">
-            <BiHash className="icon" />
+         <div className="list-item" onClick={() => setSelectedPage("topics")}>
+            <BiHash className={`icon ${selectedPage === "topics" ? "topics-icon-selected" : ""}`} />
             <p className="text">Find Topics</p>
          </div>
-         <div className="notifications list-item">
-            <HiOutlineBell className="icon" />
-            {/* <HiBell /> */}
-            {/* <IoNotificationsOutline /> // maybe this one instead. has fill too */}
+         <div className="list-item" onClick={() => setSelectedPage("notifications")}>
+            {selectedPage === "notifications" ? (
+               <RiNotification2Fill className="icon" />
+            ) : (
+               <RiNotification2Line className="icon" />
+            )}
             <p className="text">Notifications</p>
          </div>
-         <div className="messages list-item">
-            <FaRegEnvelope className="icon messages-icon" />
-            {/* <FaEnvelope /> */}
+         <div className="list-item" onClick={() => setSelectedPage("messages")}>
+            {selectedPage === "messages" ? (
+               <FaEnvelope className="icon messages-icon" />
+            ) : (
+               <FaRegEnvelope className="icon messages-icon" />
+            )}
             <p className="text">Messages</p>
          </div>
-         <div className="bookmarks list-item">
-            <MdOutlineBookmarkBorder className="icon" />
-            {/* <MdOutlineBookmark /> */}
+         <div className="list-item" onClick={() => setSelectedPage("bookmarks")}>
+            {selectedPage === "bookmarks" ? (
+               <MdOutlineBookmark className="icon" />
+            ) : (
+               <MdOutlineBookmarkBorder className="icon" />
+            )}
             <p className="text">Bookmarks</p>
          </div>
-         <div className="list list-item">
-            <MdOutlineMessage className="icon" />
-            {/* <MdMessage /> */}
+         <div className="list-item" onClick={() => setSelectedPage("lists")}>
+            {selectedPage === "lists" ? (
+               <MdMessage className="icon lists-icon" />
+            ) : (
+               <MdOutlineMessage className="icon lists-icon" />
+            )}
             <p className="text">Lists</p>
          </div>
-         <div className="profile list-item">
-            <BsPerson className="icon" />
-            {/* <BsPersonFill /> */}
+         <div className="list-item" onClick={() => setSelectedPage("profile")}>
+            {selectedPage === "profile" ? <BsPersonFill className="icon" /> : <BsPerson className="icon" />}
             <p className="text">Profile</p>
          </div>
-         <div className="see-more list-item">
+         <div className="list-item">
             <IoEllipsisHorizontalCircle className="icon" />
             <p className="text">See More</p>
          </div>

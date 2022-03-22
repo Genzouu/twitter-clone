@@ -1,6 +1,6 @@
 .left-panel {
-   min-width: 280px;
-   max-width: 280px;
+   min-width: 277px;
+   max-width: 277px;
    min-height: 100%;
    margin-left: 16.5%;
    color: var(--main-text-colour);
@@ -8,6 +8,7 @@
    flex-direction: column;
    align-items: flex-start;
    padding: 0.8rem;
+   user-select: none;
 
    .list-item {
       width: fit-content;
@@ -36,8 +37,8 @@
    }
 
    .icon {
-      width: 1.8rem;
-      height: 1.8rem;
+      min-width: 1.8rem;
+      min-height: 1.8rem;
    }
 
    .text {
@@ -46,6 +47,14 @@
 
    .messages-icon {
       transform: scaleX(0.8);
+   }
+
+   .lists-icon {
+      transform: scaleX(0.9);
+   }
+
+   .topics-icon-selected {
+      stroke-width: 1px;
    }
 
    .tweet-button {

@@ -26,6 +26,9 @@ code {
    box-sizing: border-box;
    padding: 0;
    margin: 0;
+   color: var(
+      --main-text-colour
+   ); /* just for now since I keep thinking something's wrong but it's just that the default text colour is the same as the background */
 }
 
 button {
