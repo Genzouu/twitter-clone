@@ -1,0 +1,104 @@
+.left-panel {
+   min-width: 280px;
+   max-width: 280px;
+   min-height: 100%;
+   margin-left: 16.5%;
+   color: var(--main-text-colour);
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+   padding: 0.8rem;
+
+   .list-item {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.4rem;
+      padding-top: 0.7rem;
+      padding-bottom: 0.7rem;
+      padding-left: 0.8rem;
+      padding-right: 1.8rem;
+      border-radius: 250px; //arbitrary large number to get full rounded corners
+      transition: background-color 200ms;
+      cursor: pointer;
+
+      &:hover {
+         background-color: #181818;
+      }
+   }
+
+   .twitter-logo {
+      color: #d6d9db;
+      margin-left: 0.8rem;
+      margin-bottom: 0.8rem;
+      cursor: pointer;
+   }
+
+   .icon {
+      width: 1.8rem;
+      height: 1.8rem;
+   }
+
+   .text {
+      margin-top: -0.3rem;
+   }
+
+   .messages-icon {
+      transform: scaleX(0.8);
+   }
+
+   .tweet-button {
+      width: 90%;
+      min-height: 3.2rem;
+      border-radius: 250px;
+      background-color: var(--main-accent-colour);
+      margin-top: 1.6rem;
+      margin-left: 0.2rem;
+      color: var(--main-text-colour);
+      font-size: 1.4rem;
+      transition: background-color 200ms;
+
+      &:hover {
+         background-color: #1a8cd8;
+      }
+   }
+
+   .user-panel {
+      width: 100%;
+      padding: 0.6rem;
+      border-radius: 250px;
+      display: flex;
+      align-items: center;
+      margin-top: auto;
+
+      font-size: 1rem;
+      transition: background-color 200ms;
+      cursor: pointer;
+
+      &:hover {
+         background-color: #181818;
+      }
+   }
+
+   .profile-picture {
+      width: 2.7rem;
+      height: 2.7rem;
+      color: rgb(70, 70, 70); //placeholder
+      margin-right: 0.8rem;
+   }
+
+   .username {
+      color: var(--main-text-colour);
+   }
+
+   .handle {
+      color: var(--secondary-text-colour);
+   }
+
+   .ellipsis-icon {
+      width: 1.4rem;
+      height: 1.4rem;
+      margin-left: auto;
+   }
+}
