@@ -6,12 +6,16 @@
    --main-accent-colour: #1d9bf0;
 }
 
-.html {
+html {
    font-size: 62.5%;
 }
 
 body {
    font-size: 1.6rem;
+}
+
+body,
+textarea {
    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
       "Droid Sans", "Helvetica Neue", sans-serif;
    -webkit-font-smoothing: antialiased;
@@ -26,13 +30,15 @@ code {
    box-sizing: border-box;
    padding: 0;
    margin: 0;
-   color: var(
-      --main-text-colour
-   ); /* just for now since I keep thinking something's wrong but it's just that the default text colour is the same as the background */
 }
 
 button {
    cursor: pointer;
+}
+
+button,
+input,
+textarea {
    outline: none;
    border: none;
 }

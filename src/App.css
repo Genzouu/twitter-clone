@@ -3,4 +3,5 @@
    height: 100vh;
    background-color: var(--main-background-colour);
    display: flex;
+   overflow: hidden;
 }

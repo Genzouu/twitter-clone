@@ -1,15 +1,111 @@
 .home {
    width: 100%;
    height: 100%;
+   color: var(--main-text-colour);
 
    .header {
+      width: 100%;
+      height: 5.3rem;
       display: flex;
       justify-content: space-between;
-      padding: 1rem;
-      font-size: 1.4rem;
+      align-items: center;
+      padding: 0 1.8rem;
+      font-size: 2.2rem;
    }
 
-   .home-text {
-      margin-top: -0.3rem;
+   .home-text,
+   .sparkle-icon {
+      cursor: pointer;
+   }
+
+   .bottom-area {
+      width: 100%;
+      height: 100%;
+      overflow: scroll;
+   }
+
+   .posts {
+      font-size: 10rem;
+      word-wrap: break-word;
+   }
+
+   .tweet-container {
+      width: 100%;
+      min-height: 16.2rem;
+      display: flex;
+      padding: 0.6rem 1.4rem;
+      border-bottom: 1px solid #2f3336;
+   }
+
+   .profile-picture {
+      width: 5.2rem;
+      height: 5.2rem;
+      color: rgb(70, 70, 70); //placeholder
+      cursor: pointer;
+   }
+
+   .right-container {
+      width: 100%;
+      overflow: hidden;
+      margin-top: 1.8rem;
+      margin-left: 1.3rem;
+   }
+
+   .input-message {
+      width: 100%;
+      height: 2.8rem;
+      word-wrap: break-word;
+      overflow: hidden;
+      resize: none;
+      font-size: 2rem;
+      line-height: 2.4rem;
+      color: var(--main-text-colour);
+      background-color: transparent;
+      outline: none;
+   }
+
+   .visibility-options {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--main-accent-colour);
+      cursor: pointer;
+      margin-top: 1.3rem;
+   }
+
+   .line-break {
+      width: 98%;
+      height: 1px;
+      background-color: #2f3336;
+      margin-top: 1.4rem;
+      margin-bottom: 1.3rem;
+   }
+
+   .icons-tweet-button-container {
+      display: flex;
+      align-items: center;
+   }
+
+   .utility-icons-container {
+      width: 100%;
+      height: fit-content;
+      display: flex;
+      color: var(--main-accent-colour);
+      gap: 1.2rem;
+   }
+
+   .utility-icon {
+      width: 2.2rem;
+      height: auto;
+      cursor: pointer;
+   }
+
+   .tweet-button {
+      width: 15.6rem;
+      height: 3.4rem;
+      margin-right: 1rem;
+      color: var(--main-text-colour);
+      background-color: var(--main-accent-colour);
+      border-radius: 250px;
    }
 }
