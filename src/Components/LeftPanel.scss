@@ -3,7 +3,7 @@
    max-width: 277px;
    min-height: 100%;
    margin-left: 16.5%;
-   color: var(--main-text-colour);
+   color: var(--main-element-colour);
    display: flex;
    flex-direction: column;
    align-items: flex-start;
@@ -65,7 +65,7 @@
       background-color: var(--main-accent-colour);
       margin-top: 2.5rem;
       margin-left: 0.2rem;
-      color: var(--main-text-colour);
+      color: var(--main-element-colour);
       font-size: 2.2rem;
       transition: background-color 200ms;
 
@@ -94,17 +94,16 @@
    .profile-picture {
       width: 4.3rem;
       height: 4.3rem;
-      color: rgb(80, 80, 80); //placeholder
       margin-right: 1.2rem;
    }
 
    .username {
       font-weight: 600;
-      color: var(--main-text-colour);
+      color: var(--main-element-colour);
    }
 
    .handle {
-      color: var(--secondary-text-colour);
+      color: var(--secondary-element-colour);
    }
 
    .ellipsis-icon {

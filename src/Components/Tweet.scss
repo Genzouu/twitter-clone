@@ -1,0 +1,129 @@
+.tweet {
+   width: 100%;
+   height: fit-content;
+   display: flex;
+   padding: 1rem 1.6rem;
+   scrollbar-width: thin;
+
+   .profile-picture {
+      width: 5.2rem;
+      height: 5.2rem;
+      cursor: pointer;
+   }
+
+   .right-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      margin-left: 1rem;
+   }
+
+   .username-handle-date-container {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      color: var(--secondary-element-colour);
+   }
+
+   .username {
+      font-weight: 600;
+      margin-right: 0.4rem;
+      color: var(--main-element-colour);
+   }
+
+   .spacer {
+      margin: 0 0.4rem;
+   }
+
+   .options-icon {
+      width: 2rem;
+      height: auto;
+      color: var(--secondary-element-colour);
+      margin-left: auto;
+   }
+
+   .message {
+      font-size: 1.6rem;
+      word-wrap: break-word;
+      margin-top: 0.2rem;
+   }
+
+   .images-container {
+      width: 100%;
+      margin-top: 1.6rem;
+      border: 1px solid #2f3336;
+      border-radius: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+   }
+
+   .image {
+      width: 100%;
+      height: 100%;
+   }
+
+   .icons-container {
+      width: 100%;
+      display: flex;
+      justify-content: space-between; // fix spacing so the icons are at the same horizontal position regardless of the amount next to it
+      margin-top: 0.4rem;
+      padding-right: 8rem;
+      color: var(--secondary-element-colour);
+   }
+
+   .icon-amount-container {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+   }
+
+   .icon-container {
+      width: 3.6rem;
+      height: 3.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 250px;
+      cursor: pointer;
+   }
+
+   .blue-icon > *,
+   .green-icon > *,
+   .red-icon > * {
+      transition: color 200ms, background-color 200ms;
+   }
+
+   .blue-icon:hover > * {
+      color: var(--main-accent-colour);
+   }
+   .blue-icon:hover > .icon-container,
+   .share-icon-container:hover {
+      background-color: #0b1820;
+   }
+
+   .green-icon:hover > * {
+      color: #00ba7c;
+   }
+   .green-icon:hover > .icon-container {
+      background-color: #081b15;
+   }
+
+   .red-icon:hover > * {
+      color: #f91880;
+   }
+   .red-icon:hover > .icon-container {
+      background-color: #210a15;
+   }
+
+   .icon {
+      width: 2rem;
+      height: auto;
+   }
+
+   .amount {
+      margin-top: -0.1rem;
+   }
+}

@@ -1,8 +1,8 @@
 :root {
    --main-background-colour: black;
    --secondary-background-colour: #16181c;
-   --main-text-colour: #eff3f4;
-   --secondary-text-colour: #71767b;
+   --main-element-colour: #eff3f4;
+   --secondary-element-colour: #71767b;
    --main-accent-colour: #1d9bf0;
 }
 
