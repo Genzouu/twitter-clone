@@ -5,7 +5,7 @@ import "./Home.scss";
 import { RiImage2Line } from "react-icons/ri";
 import { AiOutlineFileGif } from "react-icons/ai";
 import { MdOutlineEditCalendar } from "react-icons/md";
-import Tweet, { TweetProps } from "./Tweet";
+import Tweet, { TweetType } from "./Tweet";
 
 export default function Home() {
    const growTextAreaHeight = (e: React.FormEvent<HTMLTextAreaElement>) => {
@@ -14,7 +14,7 @@ export default function Home() {
       element.style.height = element.scrollHeight + "px";
    };
 
-   const testTweets: TweetProps[] = [
+   const testTweets: TweetType[] = [
       { handle: "user1", date: "24 Mar 22", message: "hello world!" },
       {
          handle: "user1",
@@ -26,10 +26,10 @@ export default function Home() {
             "https://www.creativeswall.com/wp-content/uploads/2013/02/Landscape.jpg",
          ],
       },
-      { handle: "user1", date: "23 Mar 22", message: "I made some spaghetti a few days ago, it was terrible!" },
+      { handle: "user1", date: "24 Mar 22", message: "I made some spaghetti a few days ago, it was terrible!" },
       {
          handle: "user2",
-         date: "23 Mar 22",
+         date: "24 Mar 22",
          message: "here is some cool sci fi concept art",
          imageURLs: [
             "https://www.this-is-cool.co.uk/wp-content/gallery/geoffroy-thoorens/geoffroy-thoorens-scifi-artist.jpg",
@@ -38,14 +38,34 @@ export default function Home() {
       },
       {
          handle: "user3",
-         date: "24 Mar 22",
+         date: "25 Mar 22",
          message: "I love apocalyptic things!",
          imageURLs: [
             "https://hdwallpaperim.com/wp-content/uploads/2017/08/22/254115-artwork-concept_art-apocalyptic-space_shuttle-abandoned.jpg",
+            "https://get.wallhere.com/photo/artwork-warrior-girls-fantasy-art-digital-art-ArtStation-forest-long-hair-concept-art-standing-in-water-dark-hair-fan-art-1937427.jpg",
          ],
       },
       { handle: "user3", date: "25 Mar 22", message: "how is everyone doing today?" },
+      {
+         handle: "user3",
+         date: "26 Mar 22",
+         message: "I also love portrait pictures!",
+         imageURLs: [
+            "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcoolvibe.com%2Fwp-content%2Fuploads%2F2012%2F09%2FSci-fi-Art-Nicolas-Bouvier-Halo-4-Concept-Art.jpg&f=1&nofb=1",
+         ],
+      },
+      {
+         handle: "user3",
+         date: "27 Mar 22",
+         message: "I love landscape pictures!",
+         imageURLs: [
+            "http://www.this-is-cool.co.uk/wp-content/uploads/2017/01/the-digital-art-of-kino-scialabba-01.jpeg",
+         ],
+      },
    ];
+
+   // add horizontal line breaks between posts
+   // add vertical lines between posts that are from the same user. seems like it adds line regardless if the posts are one different dates
 
    return (
       <div className="home">
@@ -84,9 +104,18 @@ export default function Home() {
                   </div>
                </div>
             </div>
-            <div className="tweets">
+            <div id="tweets-container" className="tweets-container">
                {testTweets.map((tweet, index) => (
-                  <Tweet handle={tweet.handle} date={tweet.date} message={tweet.message} imageURLs={tweet.imageURLs} />
+                  <>
+                     <Tweet
+                        handle={tweet.handle}
+                        date={tweet.date}
+                        message={tweet.message}
+                        imageURLs={tweet.imageURLs}
+                        index={index}
+                        key={index}
+                     />
+                  </>
                ))}
             </div>
          </div>

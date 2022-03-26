@@ -2,15 +2,34 @@ import { AiOutlineHeart, AiOutlineRetweet } from "react-icons/ai";
 import { FiMessageCircle, FiShare } from "react-icons/fi";
 import "./Tweet.scss";
 import { BiDotsHorizontalRounded } from "react-icons/bi";
+import { useEffect } from "react";
 
-export interface TweetProps {
+export interface TweetType {
    handle: string; // get the username and profile picture from a database using the handle
    date: string;
    message?: string;
    imageURLs?: string[];
 }
 
+interface TweetProps extends TweetType {
+   index: number;
+}
+
 export default function Tweet(props: TweetProps) {
+   useEffect(() => {
+      let imagesContainer = document
+         .getElementById("tweets-container")!
+         .children[props.index].getElementsByClassName("images-container")[0] as HTMLElement;
+      if (props.imageURLs && props.imageURLs.length > 1) {
+         imagesContainer.style.display = "grid";
+         imagesContainer.style.gridTemplateColumns = "1fr 1fr";
+      }
+   }, []);
+
+   // const addLineBreak = (): boolean => {
+
+   // };
+
    return (
       <div className="tweet">
          <img
@@ -58,6 +77,7 @@ export default function Tweet(props: TweetProps) {
                </div>
             </div>
          </div>
+         {/* <div className="tweet-line-break"></div> */}
       </div>
    );
 }
