@@ -13,6 +13,8 @@
 
    .list-item {
       width: fit-content;
+      color: var(--main-element-colour);
+      text-decoration: none;
       display: flex;
       align-items: center;
       gap: 1.8rem;
@@ -33,7 +35,7 @@
    .twitter-logo {
       color: #d6d9db;
       margin-left: 1.3rem;
-      margin-bottom: 1.3rem;
+      margin-bottom: 1rem;
       cursor: pointer;
    }
 

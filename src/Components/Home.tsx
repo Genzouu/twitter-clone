@@ -6,65 +6,19 @@ import { RiImage2Line } from "react-icons/ri";
 import { AiOutlineFileGif } from "react-icons/ai";
 import { MdOutlineEditCalendar } from "react-icons/md";
 import Tweet, { TweetType } from "./Tweet";
+import { useSelector } from "react-redux";
+import { store } from "../Redux/store";
+import { StateType } from "../Redux/reducers";
 
 export default function Home() {
+   const tweets = useSelector((state: StateType) => state.tweets);
+
    const growTextAreaHeight = (e: React.FormEvent<HTMLTextAreaElement>) => {
       let element = e.currentTarget as HTMLTextAreaElement;
       element.style.height = "2.8rem";
       element.style.height = element.scrollHeight + "px";
    };
 
-   const testTweets: TweetType[] = [
-      { handle: "user1", date: "24 Mar 22", message: "hello world!" },
-      {
-         handle: "user1",
-         date: "24 Mar 22",
-         imageURLs: [
-            "https://d3idt3y1vhsqn9.cloudfront.net/wp-content/uploads/2016/01/21173056/Ioan-Dumitrescu-104.jpg",
-            "http://conceptartworld.com/wp-content/uploads/2016/01/Samurai_Concept_Art_Illustration_01_Jonas_De_Ro.jpg",
-            "http://wallup.net/wp-content/uploads/2017/05/29/362360-digital_art-fantasy_art-futuristic-nature-temple-waterfall-rock-cave-trees-lights-sun_rays-Asian_architecture-lake-artwork.jpg",
-            "https://www.creativeswall.com/wp-content/uploads/2013/02/Landscape.jpg",
-         ],
-      },
-      { handle: "user1", date: "24 Mar 22", message: "I made some spaghetti a few days ago, it was terrible!" },
-      {
-         handle: "user2",
-         date: "24 Mar 22",
-         message: "here is some cool sci fi concept art",
-         imageURLs: [
-            "https://www.this-is-cool.co.uk/wp-content/gallery/geoffroy-thoorens/geoffroy-thoorens-scifi-artist.jpg",
-            "https://i.pinimg.com/originals/cd/76/8e/cd768ed1a2d0f99d3e7ae2fbe0526b2e.jpg",
-         ],
-      },
-      {
-         handle: "user3",
-         date: "25 Mar 22",
-         message: "I love apocalyptic things!",
-         imageURLs: [
-            "https://hdwallpaperim.com/wp-content/uploads/2017/08/22/254115-artwork-concept_art-apocalyptic-space_shuttle-abandoned.jpg",
-            "https://get.wallhere.com/photo/artwork-warrior-girls-fantasy-art-digital-art-ArtStation-forest-long-hair-concept-art-standing-in-water-dark-hair-fan-art-1937427.jpg",
-         ],
-      },
-      { handle: "user3", date: "25 Mar 22", message: "how is everyone doing today?" },
-      {
-         handle: "user3",
-         date: "26 Mar 22",
-         message: "I also love portrait pictures!",
-         imageURLs: [
-            "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcoolvibe.com%2Fwp-content%2Fuploads%2F2012%2F09%2FSci-fi-Art-Nicolas-Bouvier-Halo-4-Concept-Art.jpg&f=1&nofb=1",
-         ],
-      },
-      {
-         handle: "user3",
-         date: "27 Mar 22",
-         message: "I love landscape pictures!",
-         imageURLs: [
-            "http://www.this-is-cool.co.uk/wp-content/uploads/2017/01/the-digital-art-of-kino-scialabba-01.jpeg",
-         ],
-      },
-   ];
-
-   // add horizontal line breaks between posts
    // add vertical lines between posts that are from the same user. seems like it adds line regardless if the posts are one different dates
 
    return (
@@ -90,7 +44,7 @@ export default function Home() {
                      <BiWorld />
                      <p className="visibility-text">Anyone can reply</p>
                   </div>
-                  <div className="line-break"></div>
+                  <div className="post-section-line-break"></div>
                   <div className="icons-tweet-button-container">
                      <div className="utility-icons-container">
                         <RiImage2Line className="utility-icon" />
@@ -105,17 +59,8 @@ export default function Home() {
                </div>
             </div>
             <div id="tweets-container" className="tweets-container">
-               {testTweets.map((tweet, index) => (
-                  <>
-                     <Tweet
-                        handle={tweet.handle}
-                        date={tweet.date}
-                        message={tweet.message}
-                        imageURLs={tweet.imageURLs}
-                        index={index}
-                        key={index}
-                     />
-                  </>
+               {tweets.map((tweet, index) => (
+                  <Tweet index={index} key={index} />
                ))}
             </div>
          </div>

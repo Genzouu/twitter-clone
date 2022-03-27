@@ -3,12 +3,26 @@
    height: fit-content;
    display: flex;
    padding: 1rem 1.6rem;
-   scrollbar-width: thin;
+   scrollbar-width: none;
+   position: relative;
+
+   &.line-break {
+      border-bottom: solid 1px #2f3336;
+   }
 
    .profile-picture {
       width: 5.2rem;
       height: 5.2rem;
       cursor: pointer;
+   }
+
+   .vertical-connection-line {
+      width: 2px;
+      position: absolute;
+      left: 4.1rem;
+      top: 6.4rem;
+      bottom: -0.8rem;
+      background-color: #333639;
    }
 
    .right-container {

@@ -8,6 +8,7 @@ import { RiNotification2Fill, RiNotification2Line } from "react-icons/ri";
 
 import "./LeftPanel.scss";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function LeftPanel() {
    const [selectedPage, setSelectedPage] = useState<
@@ -16,11 +17,13 @@ export default function LeftPanel() {
 
    return (
       <div className="left-panel">
-         <BsTwitter className="twitter-logo icon" />
-         <div className="list-item" onClick={() => setSelectedPage("home")}>
+         <Link to={"/"} onClick={() => setSelectedPage("home")}>
+            <BsTwitter className="twitter-logo icon" />
+         </Link>
+         <Link className="list-item" to={"/"} onClick={() => setSelectedPage("home")}>
             {selectedPage === "home" ? <AiFillHome className="icon" /> : <AiOutlineHome className="icon" />}
             <p className="text">Home</p>
-         </div>
+         </Link>
          <div className="list-item" onClick={() => setSelectedPage("topics")}>
             <BiHash className={`icon ${selectedPage === "topics" ? "topics-icon-selected" : ""}`} />
             <p className="text">Find Topics</p>
