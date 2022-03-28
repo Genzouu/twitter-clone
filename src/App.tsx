@@ -1,9 +1,9 @@
-import { Provider } from "react-redux";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import LeftPanel from "./Components/LeftPanel";
 import MainPanel from "./Components/MainPanel";
-import { store } from "./Redux/store";
+import RightPanel from "./Components/RightPanel";
+import "./App.css";
 
 function App() {
    return (
@@ -11,6 +11,7 @@ function App() {
          <Router>
             <LeftPanel />
             <MainPanel />
+            <RightPanel />
          </Router>
       </div>
    );

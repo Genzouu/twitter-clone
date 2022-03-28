@@ -39,7 +39,7 @@ const tweetsSliceInitState: TweetType[] = [
    {
       userHandle: "user3",
       date: "26 Mar 22",
-      message: "I also love portrait pictures!",
+      message: "I love portrait pictures!",
       imageURLs: [
          "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcoolvibe.com%2Fwp-content%2Fuploads%2F2012%2F09%2FSci-fi-Art-Nicolas-Bouvier-Halo-4-Concept-Art.jpg&f=1&nofb=1",
       ],
@@ -48,7 +48,7 @@ const tweetsSliceInitState: TweetType[] = [
    {
       userHandle: "user3",
       date: "27 Mar 22",
-      message: "I love landscape pictures!",
+      message: "I also love landscape pictures!",
       imageURLs: ["http://www.this-is-cool.co.uk/wp-content/uploads/2017/01/the-digital-art-of-kino-scialabba-01.jpeg"],
       id: 6,
    },
