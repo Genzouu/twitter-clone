@@ -3,5 +3,6 @@
    height: 100vh;
    background-color: var(--main-background-colour);
    display: flex;
+   justify-content: center;
    overflow: hidden;
 }

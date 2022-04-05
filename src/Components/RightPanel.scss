@@ -54,3 +54,16 @@
       font-weight: 600;
    }
 }
+
+@media screen and (max-width: 1110px) {
+   .right-panel {
+      width: 28rem;
+      margin-left: 2rem;
+   }
+}
+
+@media screen and (max-width: 1000px) {
+   .right-panel {
+      display: none;
+   }
+}

@@ -1,8 +1,7 @@
 .left-panel {
-   min-width: 277px;
-   max-width: 277px;
+   min-width: 27rem;
+   max-width: 27rem;
    min-height: 100%;
-   margin-left: 16.5%;
    color: var(--main-element-colour);
    display: flex;
    flex-direction: column;
@@ -112,5 +111,30 @@
       width: 2.1rem;
       height: 2.1rem;
       margin-left: auto;
+   }
+}
+
+@media screen and (max-width: 1260px) {
+   .left-panel {
+      min-width: 0;
+      align-items: center;
+
+      p,
+      button, // remove button for now
+      .ellipsis-icon {
+         display: none;
+      }
+
+      .twitter-logo {
+         margin-left: 0;
+      }
+
+      .list-item {
+         padding: 1.1rem 1.3rem;
+      }
+
+      .profile-picture {
+         margin: 0;
+      }
    }
 }
