@@ -66,7 +66,7 @@ const tweetsSlice = createSlice({
          if (removeIndex >= 0) {
             state.splice(removeIndex, 1);
          } else {
-            console.error("The specified index " + action.payload + " does not exist");
+            console.error("The specified index '" + action.payload + "' does not exist");
          }
       },
    },

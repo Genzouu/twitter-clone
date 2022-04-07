@@ -69,7 +69,7 @@ export default function LeftPanel() {
             <p className="text">See More</p>
          </div>
          <button className="tweet-button">Tweet</button>
-         <div className="user-panel">
+         <Link className="user-panel" to={"/login"}>
             <img
                src="http://getdrawings.com/free-icon-bw/anonymous-avatar-icon-19.png"
                alt=""
@@ -80,7 +80,7 @@ export default function LeftPanel() {
                <p className="handle">@username</p>
             </div>
             <BiDotsHorizontalRounded className="ellipsis-icon" />
-         </div>
+         </Link>
       </div>
    );
 }

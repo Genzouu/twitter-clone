@@ -1,16 +1,32 @@
 import { HiOutlineLocationMarker, HiOutlineSparkles } from "react-icons/hi";
 import { BiPoll, BiSmile, BiWorld } from "react-icons/bi";
-
-import "./Home.scss";
 import { RiImage2Line } from "react-icons/ri";
 import { AiOutlineFileGif } from "react-icons/ai";
 import { MdOutlineEditCalendar } from "react-icons/md";
-import Tweet, { TweetType } from "./Tweet";
-import { useSelector } from "react-redux";
-import { store } from "../Redux/store";
+import { useDispatch, useSelector } from "react-redux";
+
+import "./Home.scss";
+import Tweet from "./Tweet";
 import { StateType } from "../Redux/reducers";
+import { postTweet } from "../Redux/Slices/tweetsSlice";
+
+const months = [
+   "January",
+   "February",
+   "March",
+   "April",
+   "May",
+   "June",
+   "July",
+   "August",
+   "September",
+   "October",
+   "November",
+   "December",
+];
 
 export default function Home() {
+   const dispatch = useDispatch();
    const tweets = useSelector((state: StateType) => state.tweets);
 
    const growTextAreaHeight = (e: React.FormEvent<HTMLTextAreaElement>) => {
@@ -19,12 +35,29 @@ export default function Home() {
       element.style.height = element.scrollHeight + "px";
    };
 
-   // add vertical lines between posts that are from the same user. seems like it adds line regardless if the posts are one different dates
+   const managePostTweet = (textArea: HTMLTextAreaElement) => {
+      if (textArea.value !== "") {
+         let date = new Date();
+         dispatch(
+            postTweet({
+               id: tweets.length,
+               userHandle: "username",
+               date: date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear(),
+               message: textArea.value,
+            })
+         );
+
+         textArea.value = "";
+         textArea.style.height = "2.8rem";
+      }
+   };
 
    return (
       <div className="home">
          <div className="header">
-            <p className="home-text">Home</p>
+            <p className="home-text" onClick={() => (document.getElementsByClassName("main-section")[0].scrollTop = 0)}>
+               Home
+            </p>
             <HiOutlineSparkles className="sparkle-icon" />
          </div>
          <div className="main-section">
@@ -36,6 +69,7 @@ export default function Home() {
                />
                <div className="right-container">
                   <textarea
+                     id="input-message"
                      className="input-message"
                      placeholder="What are you doing now?"
                      onChange={(e) => growTextAreaHeight(e)}
@@ -54,7 +88,12 @@ export default function Home() {
                         <MdOutlineEditCalendar className="utility-icon" />
                         <HiOutlineLocationMarker className="utility-icon" />
                      </div>
-                     <button className="tweet-button">Tweet</button>
+                     <button
+                        className="tweet-button"
+                        onClick={() => managePostTweet(document.getElementById("input-message") as HTMLTextAreaElement)}
+                     >
+                        Tweet
+                     </button>
                   </div>
                </div>
             </div>
