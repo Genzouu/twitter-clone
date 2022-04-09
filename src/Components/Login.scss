@@ -56,7 +56,7 @@
    .login-button {
       width: 40rem;
       height: 6rem;
-      margin-top: 4rem;
+
       font-size: 2rem;
       font-weight: 600;
       border-radius: 4px;
@@ -65,5 +65,19 @@
       &:hover {
          background-color: #d7dbdc;
       }
+   }
+
+   .login-link {
+      margin-top: 4rem;
+   }
+
+   .login-link-disabled {
+      pointer-events: none;
+      user-select: none;
+   }
+
+   .login-link-disabled > .login-button {
+      background-color: #787a7a;
+      cursor: default;
    }
 }

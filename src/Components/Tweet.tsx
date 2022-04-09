@@ -45,7 +45,7 @@ export default function Tweet(props: TweetProps) {
             alt=""
             className="profile-picture"
          />
-         {!addLineBreak() && props.index != 0 ? <div className="vertical-connection-line"></div> : null}
+         {!addLineBreak() && props.index !== 0 ? <div className="vertical-connection-line"></div> : null}
          <div className="right-container">
             <div className="username-handle-date-container">
                <p className="username">{tweet.userHandle.toUpperCase() /* just to distinguish it better for now */}</p>

@@ -28,6 +28,7 @@ const months = [
 export default function Home() {
    const dispatch = useDispatch();
    const tweets = useSelector((state: StateType) => state.tweets);
+   const currentUserHandle = useSelector((state: StateType) => state.currentUserHandle);
 
    const growTextAreaHeight = (e: React.FormEvent<HTMLTextAreaElement>) => {
       let element = e.currentTarget as HTMLTextAreaElement;
@@ -41,7 +42,7 @@ export default function Home() {
          dispatch(
             postTweet({
                id: tweets.length,
-               userHandle: "username",
+               userHandle: currentUserHandle!,
                date: date.getDate() + " " + months[date.getMonth()] + " " + date.getFullYear(),
                message: textArea.value,
             })

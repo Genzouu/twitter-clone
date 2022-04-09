@@ -9,8 +9,12 @@ import { RiNotification2Fill, RiNotification2Line } from "react-icons/ri";
 import "./LeftPanel.scss";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { StateType } from "../Redux/reducers";
 
 export default function LeftPanel() {
+   const currentUserHandle = useSelector((state: StateType) => state.currentUserHandle);
+
    const [selectedPage, setSelectedPage] = useState<
       "home" | "topics" | "notifications" | "messages" | "bookmarks" | "lists" | "profile"
    >("home");
@@ -76,8 +80,8 @@ export default function LeftPanel() {
                className="profile-picture"
             />
             <div className="username-container">
-               <p className="username">Username</p>
-               <p className="handle">@username</p>
+               <p className="username">{useSelector((state: StateType) => state.currentUserHandle)}</p>
+               <p className="handle">@{useSelector((state: StateType) => state.currentUserHandle)}</p>
             </div>
             <BiDotsHorizontalRounded className="ellipsis-icon" />
          </Link>

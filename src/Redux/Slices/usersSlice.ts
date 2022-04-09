@@ -13,7 +13,7 @@ const usersSlice = createSlice({
    initialState: usersInitState,
    reducers: {
       addUser: (state, action: PayloadAction<UserType>) => {
-         if (state.findIndex(u => u.handle === action.payload.handle) < 0) state.push(action.payload);
+         state.push(action.payload);
       },
    },
 });
