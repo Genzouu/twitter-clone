@@ -1,0 +1,35 @@
+.profile {
+   color: var(--main-element-colour);
+   .header {
+      min-height: 5.4rem;
+      display: flex;
+      align-items: center;
+      padding: 0 1.2rem;
+   }
+
+   .return-arrow-icon {
+      width: 3rem;
+      height: 3rem;
+      margin-right: 3rem;
+   }
+
+   .username-tweet-count-container {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .header-username {
+      font-size: 2rem;
+      font-weight: 700;
+   }
+
+   .tweet-count {
+      font-size: 1.4rem;
+      color: var(--secondary-element-colour);
+   }
+
+   .banner {
+      min-height: 19.8rem;
+      background-color: #333639;
+   }
+}

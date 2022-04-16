@@ -64,10 +64,10 @@ export default function LeftPanel() {
             )}
             <p className="text">Lists</p>
          </div>
-         <div className="list-item" onClick={() => setSelectedPage("profile")}>
+         <Link className="list-item" to="/profile" onClick={() => setSelectedPage("profile")}>
             {selectedPage === "profile" ? <BsPersonFill className="icon" /> : <BsPerson className="icon" />}
             <p className="text">Profile</p>
-         </div>
+         </Link>
          <div className="list-item">
             <IoEllipsisHorizontalCircle className="icon" />
             <p className="text">See More</p>

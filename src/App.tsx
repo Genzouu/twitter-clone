@@ -16,7 +16,7 @@ function App() {
    const navigate = useNavigate();
 
    useEffect(() => {
-      if (!currentUserHandle) navigate("/login");
+      // if (!currentUserHandle) navigate("/login"); //disable for now while creating website
    }, []);
 
    return (
