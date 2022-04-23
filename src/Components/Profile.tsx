@@ -1,4 +1,6 @@
+import { BiCalendar } from "react-icons/bi";
 import { BsArrowLeftShort } from "react-icons/bs";
+import { MdOutlineCake } from "react-icons/md";
 import { useSelector } from "react-redux";
 import { StateType } from "../Redux/reducers";
 
@@ -18,27 +20,39 @@ export default function Profile() {
                <p className="tweet-count">10 Tweets</p>
             </div>
          </div>
+         <div className="banner"></div>
          <div className="top-section">
-            <div className="banner"></div>
-            {/* <img
+            <img
                src="http://getdrawings.com/free-icon-bw/anonymous-avatar-icon-19.png"
                alt=""
                className="profile-picture"
-            /> */}
-            <button className="edit-profile">Edit Profile</button>
+            />
+            <div className="edit-profile-container">
+               <button className="edit-profile-button">Edit Profile</button>
+            </div>
             <p className="username">Username</p>
             <p className="handle">@username</p>
             <p className="bio">This is a bio.</p>
-            <p className="birthday">Birthday: 1/1/2000</p>
-            <p className="account-created-date">Using Twitter from 1/2000</p>
-            <p className="following">10 Following</p>
-            <p className="followers">10 Followers</p>
-            <div className="sections">
-               <button className="tweets">Tweets</button>
-               <button className="tweets-replies">Tweets and Replies</button>
-               <button className="media">Media</button>
-               <button className="likes">Likes</button>
+            <div className="birthday-account-created-container">
+               <MdOutlineCake className="icon" />
+               <p className="birthday">Birthday: 1/1/2000</p>
+               <BiCalendar className="icon" />
+               <p className="account-created-date">Using Twitter since January 2000</p>
             </div>
+            <div className="following-followers-container">
+               <p className="following">
+                  <span className="main-text-colour">10</span> Following
+               </p>
+               <p className="followers">
+                  <span className="main-text-colour">10</span> Followers
+               </p>
+            </div>
+         </div>
+         <div className="sections">
+            <button className="section-button">Tweets</button>
+            <button className="section-button">Tweets and Replies</button>
+            <button className="section-button">Media</button>
+            <button className="section-button">Likes</button>
          </div>
          <div className="tweet-list"></div>
       </div>
